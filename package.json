@@ -1,7 +1,7 @@
 {
   "name": "codqr-ro",
   "version": "1.0.0",
-  "description": "Coduri QR personalizate, generate instant în browser. Fără cont necesar.",
+  "description": "Coduri QR personalizate, generate instant \u00een browser. F\u0103r\u0103 cont necesar.",
   "main": "index.html",
   "scripts": {
     "dev": "python -m http.server 8000",
@@ -26,11 +26,11 @@
   "devDependencies": {
     "http-server": "^14.1.1"
   },
-  "optionalDependencies": {
-    "stripe": "^14.0.0"
-  },
   "netlify": {
     "functions": "functions",
     "publish": "."
+  },
+  "dependencies": {
+    "stripe": "^14.0.0"
   }
 }
