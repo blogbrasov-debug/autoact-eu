@@ -1,0 +1,36 @@
+{
+  "name": "codqr-ro",
+  "version": "1.0.0",
+  "description": "Coduri QR personalizate, generate instant în browser. Fără cont necesar.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000 -c-1",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "echo 'Push to main branch - Netlify auto-deploys'"
+  },
+  "keywords": [
+    "qr-code",
+    "qr-generator",
+    "personalized-qr",
+    "coduri-qr",
+    "romanian"
+  ],
+  "author": "Alexandru (blogbrasov@gmail.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/codqr-ro.git"
+  },
+  "homepage": "https://codqr.ro",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "optionalDependencies": {
+    "stripe": "^14.0.0"
+  },
+  "netlify": {
+    "functions": "functions",
+    "publish": "."
+  }
+}
