@@ -94,8 +94,8 @@ window.QR_CONFIG = {
     // See ACTION_PLAN_STRIPE_PRICING.md for setup instructions
     prices: {
       pro: 'price_1UPfB2BRTh54P0hRNU2yvEK0',       // CodQR Pro - one-time 19 RON (keep as-is)
-      pro_monthly: 'price_REQUIRES_CREATION',      // TODO: Create in Stripe - 39 RON/month subscription
-      business: 'price_1UPfEeBRTh54P0hRb4jMXSxg'   // CodQR Business - KEEP or UPDATE to 89 RON/month
+      pro_monthly: 'price_1UQVi6BRTh54P0hRQ7jEBgzJ',      // CodQR Pro Monthly - 39 RON/month subscription ✅
+      business: 'price_1UQVjIBRTh54P0hR1Z01lqRa'   // CodQR Business - 89 RON/month ✅
     },
     // Success/Cancel URLs
     successUrl: window.location.origin + '/index.html?success=true',
