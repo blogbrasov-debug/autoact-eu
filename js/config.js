@@ -1,5 +1,5 @@
 /**
- * CodQR.ro Configuration — MONETIZATION OPTIMIZED
+ * QR Code Generator Configuration — MONETIZATION OPTIMIZED
  * Stripe Payment Integration (Live Mode)
  * Updated: 2026-10-14 — Hybrid pricing model implementation
  */
