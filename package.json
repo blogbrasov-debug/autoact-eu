@@ -1,7 +1,7 @@
 {
   "name": "codqr-ro",
   "version": "1.0.0",
-  "description": "Coduri QR personalizate, generate instant \u00een browser. F\u0103r\u0103 cont necesar.",
+  "description": "Coduri QR personalizate, generate instant în browser. Fără cont necesar.",
   "main": "index.html",
   "scripts": {
     "dev": "python -m http.server 8000",
@@ -31,6 +31,7 @@
     "publish": "."
   },
   "dependencies": {
+    "qr-code-styling": "^1.9.2",
     "stripe": "^14.0.0"
   }
 }
