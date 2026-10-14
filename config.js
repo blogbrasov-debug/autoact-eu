@@ -1,6 +1,7 @@
 /**
- * CodQR.ro Configuration
+ * CodQR.ro Configuration — MONETIZATION OPTIMIZED
  * Stripe Payment Integration (Live Mode)
+ * Updated: 2026-10-14 — Hybrid pricing model implementation
  */
 
 window.QR_CONFIG = {
@@ -12,52 +13,75 @@ window.QR_CONFIG = {
     website: 'https://codqr.ro'
   },
 
-  // Tier Limits (Free tier)
+  // Tier Limits (Free tier — now limited to drive conversions)
   limits: {
     free: {
       maxWidth: 1024,
-      maxFormat: 'png'
+      maxFormat: 'png',
+      maxCodesPerMonth: 10, // NEW: Limit free tier after 30 days to drive Pro conversions
+      analyticsRetention: 7 // days
     }
   },
 
-  // Pricing Tiers
+  // Pricing Tiers — HYBRID MODEL
   tiers: {
     free: {
       name: 'Gratuit',
       price: '0',
       currency: 'RON',
-      description: 'PNG/JPG până la 1024px',
+      description: 'PNG/JPG până la 1024px — 10 coduri/lună după trial',
       features: [
         'Download instant',
         'Fără cont necesar',
-        'Fără limită de timp'
+        '10 coduri/lună (după 30 zile)',
+        'Suport comunitate'
       ]
     },
-    pro: {
-      name: 'Pro',
+    pro_percode: {
+      name: 'Pro — Per Cod',
       price: '19',
-      currency: 'RON',
-      description: 'SVG vectorial + 2048px',
+      currency: 'RON/cod',
+      description: 'SVG vectorial + 2048px — plătești doar ce iei',
       features: [
         'SVG vectorial pentru print',
         'Export 2048px',
         'Fără watermark',
-        '5 coduri/lună'
+        'Licență comercială',
+        'Ideal pentru utilizare ocazională'
       ],
       type: 'one-time'
     },
+    pro_monthly: {
+      name: 'Pro — Abonament',
+      price: '39',
+      currency: 'RON/lună',
+      description: 'Exporturi SVG nelimitate — cea mai bună valoare',
+      features: [
+        'Exporturi Pro nelimitate',
+        'SVG + PNG 2048px',
+        'Fără watermark',
+        'Licență comercială extinsă',
+        'Anulare oricând'
+      ],
+      type: 'subscription',
+      badge: 'BEST VALUE'
+    },
     business: {
       name: 'Business',
-      price: '29',
+      price: '89',
       currency: 'RON/lună',
-      description: 'Coduri dinamice + statistici',
+      description: 'Coduri dinamice + analytics — pentru SME-uri active',
       features: [
         'Coduri dinamice (schimbabil după print)',
-        'Statistici scanare',
+        'Statistici scanare real-time',
         'Unlimited coduri',
-        'API access'
+        'API access (beta)',
+        'Email support prioritar',
+        '3 team members',
+        'Ideal pentru restaurant, imobiliar, inventar'
       ],
-      type: 'subscription'
+      type: 'subscription',
+      badge: 'POPULAR'
     }
   },
 
@@ -66,41 +90,59 @@ window.QR_CONFIG = {
     publishableKey: 'pk_live_51UMWHdBRTh54P0hRK3vQjMtndxX0JZnVsGh5JJlhvWwwyaWjslV1SPBLWD7v8Bmqj6DEO7DKM2LFxlKCeDOfKESr00qBhxgOGp',
     accountId: 'acct_1UMWHdBRTh54P0hR',
     mode: 'live',
-    // Price IDs - CONFIGURED FOR LIVE PAYMENTS
+    // Price IDs - REQUIRES UPDATE IN STRIPE DASHBOARD FOR NEW PRICES
+    // See ACTION_PLAN_STRIPE_PRICING.md for setup instructions
     prices: {
-      pro: 'price_1UPfB2BRTh54P0hRNU2yvEK0', // CodQR Pro - one-time 19 RON
-      business: 'price_1UPfEeBRTh54P0hRb4jMXSxg' // CodQR Business - recurring 29 RON/month
+      pro: 'price_1UPfB2BRTh54P0hRNU2yvEK0',       // CodQR Pro - one-time 19 RON (keep as-is)
+      pro_monthly: 'price_REQUIRES_CREATION',      // TODO: Create in Stripe - 39 RON/month subscription
+      business: 'price_1UPfEeBRTh54P0hRb4jMXSxg'   // CodQR Business - KEEP or UPDATE to 89 RON/month
     },
     // Success/Cancel URLs
     successUrl: window.location.origin + '/index.html?success=true',
     cancelUrl: window.location.origin + '/index.html?canceled=true'
   },
 
-  // Products (Business packages)
+  // Industry Package Products — NEW REVENUE STREAM
   products: {
     etichete: {
-      name: 'Etichete Inventar',
-      price: '49',
+      name: 'Kit Etichete Inventar',
+      price: '79',
       currency: 'RON',
-      description: '500 etichete personalizate'
+      description: '500 etichete + QR coduri nelimitate',
+      icon: '📦',
+      ideal_for: 'Retaileri, depozite, magazine'
     },
     kitreview: {
       name: 'Kit Recenzii Google',
-      price: '39',
+      price: '49',
       currency: 'RON',
-      description: 'Pachet complet de promovare recenzii'
+      description: 'Pachet complet: QR + templates email + ghid',
+      icon: '⭐',
+      ideal_for: 'Restaurante, saloane, servicii'
     },
     horeca: {
-      name: 'Pachet HoReCa',
+      name: 'Pachet HoReCa Pro',
+      price: '119',
+      currency: 'RON/lună',
+      description: 'Meniu QR + carduri vizită + promocii sezonale',
+      icon: '🍽️',
+      ideal_for: 'Restaurant, bar, cafenea'
+    },
+    imobiliare: {
+      name: 'Pachet Imobiliar',
       price: '99',
       currency: 'RON/lună',
-      description: 'Gestionare coduri pentru restaurant'
+      description: 'Anunț cu QR + virtual tour + contact',
+      icon: '🏠',
+      ideal_for: 'Agent imobiliar, birou vânzări'
     },
-    partener: {
-      name: 'Program Partener',
-      price: '149',
-      currency: 'RON/an',
-      description: 'Pentru producători de monumente'
+    monument: {
+      name: 'Program Partener Producători',
+      price: '199',
+      currency: 'RON/lună',
+      description: 'White-label QR + branding partener',
+      icon: '🏛️',
+      ideal_for: 'Producători pietre funerare'
     }
   },
 
@@ -114,6 +156,8 @@ window.QR_CONFIG = {
   features: {
     dynamicQr: true,
     stripeCheckout: true,
+    freeTierLimits: true, // NEW: Enforce 10 codes/month after 30 days
+    industryPackages: true, // NEW: Show industry package CTAs
     gumroadFallback: false
   }
 };
@@ -121,9 +165,9 @@ window.QR_CONFIG = {
 // Legacy Gumroad config (deprecated, kept for reference)
 window.QR_CONFIG.gumroad = {
   enabled: false,
-  token: '', // Deprecated
+  token: '',
   products: {
-    pro: '', // Deprecated
-    business: '', // Deprecated
+    pro: '',
+    business: '',
   }
 };

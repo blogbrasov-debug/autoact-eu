@@ -233,12 +233,9 @@
     </section>
 
     <!-- ============ PREȚURI ============ -->
-    <section id="pricing" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>💰 Prețuri simple și corecte</h2>
         </div>
         <div class="pricing-grid">
+          <!-- FREE TIER -->
           <div class="price-card">
             <h3>Gratuit</h3>
             <p class="price">0 <small>lei</small></p>
@@ -246,32 +243,108 @@
               <li>PNG & JPG până la 1024 px</li>
               <li>Toate stilurile și culorile</li>
               <li>Logo în centru</li>
-              <li>Fără cont, fără limite</li>
+              <li><strong style="color: #e74c3c;">Limit: 10 coduri/lună după 30 zile trial</strong></li>
             </ul>
             <a href="#configurator" class="btn btn-ghost">Începe acum</a>
           </div>
-          <div class="price-card featured">
-            <span class="tag">Popular</span>
-            <h3>Pro</h3>
+
+          <!-- PRO PER-CODE TIER -->
+          <div class="price-card">
+            <span class="tag" style="background: #3498db;">PAY AS YOU GO</span>
+            <h3>Pro — Per Cod</h3>
             <p class="price">19 <small>lei / cod</small></p>
             <ul>
-              <li>Tot ce include Gratuit</li>
-              <li><strong>SVG vectorial</strong> pentru print</li>
-              <li>PNG până la 2048 px</li>
+              <li>SVG vectorial pentru print</li>
+              <li>PNG/JPG 2048 px</li>
+              <li>Fără watermark</li>
               <li>Licență comercială</li>
+              <li><em>Ideal: utilizare ocazională</em></li>
             </ul>
-            <button class="btn btn-primary buy" data-tier="pro">Cumpără Pro</button>
+            <button class="btn btn-primary buy" data-tier="pro">Cumpără 1 Cod — 19 lei</button>
           </div>
-          <div class="price-card">
-            <h3>Business</h3>
-            <p class="price">29 <small>lei / lună</small></p>
+
+          <!-- PRO MONTHLY TIER - BEST VALUE -->
+          <div class="price-card featured">
+            <span class="tag" style="background: #27ae60;">BEST VALUE</span>
+            <h3>Pro — Abonament</h3>
+            <p class="price">39 <small>lei / lună</small></p>
             <ul>
-              <li>Tot ce include Pro</li>
-              <li><strong>QR-uri dinamice</strong> — schimbi destinația</li>
-              <li>Statistici de scanare</li>
-              <li>10 coduri active</li>
+              <li>Exporturi SVG/PNG <strong>nelimitate</strong></li>
+              <li>Calitate 2048 px</li>
+              <li>Fără watermark</li>
+              <li>Licență comercială extinsă</li>
+              <li><em>Anulare oricând — ideal pentru creatori activi</em></li>
             </ul>
-            <button class="btn btn-ghost buy" data-tier="business">Vreau Business</button>
+            <button class="btn btn-primary buy" data-tier="pro_monthly">Abonează — 39 lei/lună</button>
+            <small style="display:block; margin-top: 10px; text-align: center; color: #27ae60;"><strong>Economisești: 19+ coduri pe lună = ROI în 3 coduri</strong></small>
+          </div>
+
+          <!-- BUSINESS TIER -->
+          <div class="price-card">
+            <span class="tag" style="background: #e67e22;">PENTRU SME</span>
+            <h3>Business</h3>
+            <p class="price">89 <small>lei / lună</small></p>
+            <ul>
+              <li><strong>QR-uri dinamice</strong> — schimbi destinația după print</li>
+              <li>Statistici scanare real-time</li>
+              <li>Unlimited coduri active</li>
+              <li>API access (beta)</li>
+              <li>3 team members + support prioritar</li>
+              <li><em>Perfect: restaurante, imobiliar, inventar</em></li>
+            </ul>
+            <button class="btn btn-ghost buy" data-tier="business">Vreau Business — 89 lei/lună</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRY PACKAGES ============ -->
+    <section id="packages" class="section">
+      <div class="container">
+        <h2>Pachete Pentru Industrie</h2>
+        <p class="lead">Soluții gata-făcute pentru restaurant, imobiliar, inventar și alte industrii</p>
+        
+        <div class="pricing-grid">
+          <div class="price-card">
+            <span class="tag">🍽️ HoReCa</span>
+            <h3>Pachet Restaurant</h3>
+            <p class="price">119 <small>lei / lună</small></p>
+            <ul>
+              <li>Menu QR + design profesional</li>
+              <li>WiFi QR + contact business card</li>
+              <li>Coduri dinamice nelimitate</li>
+              <li>Printare etichete PDF</li>
+              <li>Support prioritar</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="alert('Contactează echipa pentru pachet business')">Info Pachet</button>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">🏠 Imobiliar</span>
+            <h3>Pachet Real Estate</h3>
+            <p class="price">99 <small>lei / lună</small></p>
+            <ul>
+              <li>Anunț cu QR embed</li>
+              <li>Link virtual tour</li>
+              <li>Contact agent automat</li>
+              <li>Statistici vizionări</li>
+              <li>Template profesional</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="alert('Contactează echipa pentru pachet business')">Info Pachet</button>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">📦 Inventar</span>
+            <h3>Kit Etichete Inventar</h3>
+            <p class="price">79 <small>RON</small></p>
+            <ul>
+              <li>500 etichete QR pre-tiparite</li>
+              <li>Coduri nelimitate personalizate</li>
+              <li>Template gestionare inventar</li>
+              <li>Export în vrac (CSV)</li>
+              <li>Fără abonament — plată unică</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="alert('Contactează echipa pentru pachet business')">Info Pachet</button>
           </div>
         </div>
       </div>
