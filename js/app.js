@@ -1,5 +1,5 @@
 /**
- * CodQR.ro — QR Code Generator Application
+ * QR Code Generator Application
  * Stripe Payment Integration (Live Mode)
  */
 
@@ -32,8 +32,8 @@ const state = {
 // ============= INITIALIZATION =============
 
 document.addEventListener('DOMContentLoaded', () => {
-  initializeApp();
   loadStripe();
+  initializeApp();
   checkPaymentStatus();
   setupEventListeners();
   restoreDraft();
@@ -41,23 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeApp() {
-  // Load Stripe.js
-  const script = document.createElement('script');
-  script.src = 'https://js.stripe.com/v3/';
-  script.async = true;
-  script.onload = () => {
-    stripe = Stripe(window.QR_CONFIG.stripe.publishableKey);
-  };
-  document.body.appendChild(script);
-
-  // Initialize QR Code generator
+  // Initialize QR Code generator (Stripe is loaded separately in loadStripe())
   const canvas = document.getElementById('qr-canvas');
   if (canvas) {
     qrCode = new QRCodeStyling({
       width: 300,
       height: 300,
       type: 'canvas',
-      data: state.data || 'https://codqr.ro',
+      data: state.data || 'https://example.com',
       dotsOptions: { type: state.dotsStyle, color: state.colors.fg },
       cornersSquareOptions: { type: state.cornersStyle, color: state.colors.fg },
       cornersCircleOptions: { color: state.colors.fg },
@@ -90,6 +81,13 @@ function checkPaymentStatus() {
   if (params.get('success') === 'true') {
     showSuccessModal('Plată confirmată!', 'Mulțumim! Codul tău QR Pro este gata de descărcare.');
     updateProBadge();
+
+    // Track Pro purchase in GA4
+    window.gtag('event', 'pro_purchased', {
+      'value': 19,
+      'currency': 'RON',
+      'tier': 'pro'
+    });
   }
 
   if (params.get('canceled') === 'true') {
@@ -172,6 +170,15 @@ function handleStripeCheckout(tier) {
     showToast('Plată nu este configurată încă. Contactează support.', 'error');
     console.warn(`Price ID not configured for tier: ${tier}`);
     return;
+  }
+
+  // Track business signup in GA4
+  if (tier === 'business') {
+    window.gtag('event', 'business_signup', {
+      'value': 29,
+      'currency': 'RON',
+      'tier': 'business'
+    });
   }
 
   // Show checkout modal
@@ -291,9 +298,9 @@ function switchContentType(type) {
 
 function getDefaultValue(type) {
   const defaults = {
-    url: 'https://codqr.ro',
+    url: 'https://example.com',
     text: 'Hello World',
-    email: 'contact@codqr.ro',
+    email: 'contact@example.com',
     tel: '+40123456789',
     sms: '+40123456789',
     wifi: 'WIFI:T:WPA;;S:NetworkName;P:password;;',
@@ -323,6 +330,14 @@ function updateQRCode() {
     margin: state.margin,
     errorCorrectionLevel: state.errorLevel
   });
+
+  // Track QR generation in GA4
+  if (data && data.trim()) {
+    window.gtag('event', 'qr_generated', {
+      'qr_type': 'free',
+      'content_type': state.type
+    });
+  }
 
   // Check contrast
   checkContrast(state.colors.fg, state.colors.bg);
@@ -415,6 +430,14 @@ function handleExport(format, size) {
       link.download = `qr-code.${format}`;
       link.click();
     }
+
+    // Track export in GA4
+    window.gtag('event', 'qr_exported', {
+      'format': format,
+      'size': size,
+      'export_type': 'free'
+    });
+
     showToast('Descărcare în progres...', 'success');
   } catch (error) {
     console.error('Export error:', error);
@@ -459,7 +482,7 @@ function restoreDraft() {
 
 function applyDefaultValues() {
   const urlInput = document.getElementById('in-url');
-  if (urlInput) urlInput.value = 'https://codqr.ro';
+  if (urlInput) urlInput.value = 'https://example.com';
 }
 
 function checkContrast(fg, bg) {
