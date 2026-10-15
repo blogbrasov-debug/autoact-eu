@@ -1,5 +1,5 @@
 /**
- * QR Code Generator Configuration — MONETIZATION OPTIMIZED
+ * CodQR.ro Configuration — MONETIZATION OPTIMIZED
  * Stripe Payment Integration (Live Mode)
  * Updated: 2026-10-14 — Hybrid pricing model implementation
  */
@@ -149,7 +149,7 @@ window.QR_CONFIG = {
   // Dynamic QR Configuration
   dynamicQr: {
     baseUrl: 'https://codqr-dynamic.blogbrasov.workers.dev',
-    apiKey: process.env.DYNAMIC_QR_API_KEY || ''
+    apiKey: (typeof window !== 'undefined' && window.DYNAMIC_QR_API_KEY) ? window.DYNAMIC_QR_API_KEY : ''
   },
 
   // Feature Flags
