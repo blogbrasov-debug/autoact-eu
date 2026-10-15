@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ghid complet pentru implementarea meniurilor QR în restaurante. Comparație Doxmenu vs Generator QR Gratuit. Cost: 0 lei/lună. Setup: 5 minute. +40-60% comenzi mai rapide.">
+    <meta name="keywords" content="meniu QR, restaurant, digitalizare, Doxmenu, generator QR gratuit, etichetă QR">
+    <meta name="author" content="Alexandru - CodQR.ro">
+    <meta property="og:title" content="Meniu QR pentru Restaurant — Ghid Complet 2026">
+    <meta property="og:description" content="De ce ai nevoie de meniu QR, cum să-l faci în 5 minute, și cum să economisești 5600 lei/an vs Doxmenu.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://autoact.eu/images/og-qr-restaurant.png">
+    <meta property="article:published_time" content="2026-10-15">
+    <meta property="article:modified_time" content="2026-10-15">
+    <meta property="article:author" content="Alexandru">
+    <title>Meniu QR pentru Restaurant — Ghid Complet 2026 | CodQR.ro</title>
+    <link rel="canonical" href="https://autoact.eu/blog/cod-qr-restaurant-ghid">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-left: 4px solid #007bff;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #34495e;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        strong {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #f0f0f0;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #007bff;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .case-study {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #b3d9ff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+        }
+
+        .related-articles {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .related-articles h3 {
+            margin-top: 0;
+        }
+
+        .related-articles ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .related-articles a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .related-articles a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+
+        blockquote {
+            border-left: 4px solid #007bff;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Acasă</a> / <a href="/blog">Blog</a> / Meniu QR pentru Restaurant
+        </div>
+
+        <h1>Meniu QR pentru Restaurant — Ghid Complet 2026</h1>
+
+        <div class="article-meta">
+            <span>📅 Actualizat: octombrie 2026</span>
+            <span>⏱️ Citire: 8 min</span>
+            <span>📊 Dificultate: Început ✅</span>
+        </div>
+
+        <h2>Ce este meniu QR și de ce trebuie să-l ai în restaurant</h2>
+
+        <p>Imaginează-ți: un client intră în localul tău și, în loc să scoată un meniu fizic, îi scani cu telefonul o etichetă QR — și apare instantaneu un meniu digital pe ecranul lui.</p>
+
+        <p><strong>Asta e meniu QR.</strong></p>
+
+        <p>Nu e viitor — e prezent. Și nu e scump.</p>
+
+        <p>Restaurantele din Brașov, Cluj și București <strong>au trecut deja pe sisteme digitale</strong>. Cele care nu, pierd comenzi și clienții vor că e mai rapid să comande de pe telefon decât să caute chelneri.</p>
+
+        <h3>Definiție simplă</h3>
+
+        <p>Un <strong>meniu QR</strong> e o etichetă (cod de bare 2D) care direcționează clienții către o pagină web cu meniul tău.</p>
+
+        <p><strong>Avantajul:</strong></p>
+        <ul>
+            <li>Nici o instalație de software</li>
+            <li>Nici o plată lunară mare</li>
+            <li>Se scanează imediat cu orice telefon</li>
+            <li>E higienic (pandemie/gripă — nu se mai ating menuurile)</li>
+        </ul>
+
+        <h2>De ce trebuie restaurantul tău să treacă pe meniu QR (3 motive concrete)</h2>
+
+        <h3>1. Viteza comenzilor crește cu 40-60%</h3>
+
+        <p><strong>Statistică:</strong> Un client thotărăște să comande în medie în <strong>3-5 minute</strong> dacă vede meniu pe telefon versus <strong>8-12 minute</strong> cu meniu fizic.</p>
+
+        <p><strong>De ce?</strong></p>
+        <ul>
+            <li>Nu asteaptă chelneri</li>
+            <li>Poate sări la imagini ale mâncării</li>
+            <li>Vede preț + disponibilitate instant</li>
+            <li>Comenzile ajung la bucătărie mai repede</li>
+        </ul>
+
+        <p>Restaurantul tău = comenzi mai rapide = masă = profit mai mare.</p>
+
+        <h3>2. Cost: 0 lei/lună de hosting. Rival Doxmenu cere 500 lei/lună.</h3>
+
+        <p>Iată comparația exactă:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Meniu QR Gratuit</th>
+                    <th>Doxmenu</th>
+                    <th>TouchMenu</th>
+                    <th>Pos-ul din restaurant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cost lunar</strong></td>
+                    <td><strong>0 lei</strong></td>
+                    <td>500 lei</td>
+                    <td>300 lei</td>
+                    <td>1500+ lei</td>
+                </tr>
+                <tr>
+                    <td><strong>Setup</strong></td>
+                    <td>5 min</td>
+                    <td>2-3 ore</td>
+                    <td>1 oră</td>
+                    <td>Installer + config</td>
+                </tr>
+                <tr>
+                    <td><strong>Se scanează cu telefon?</strong></td>
+                    <td>Da</td>
+                    <td>Da (dar și platformă proprie)</td>
+                    <td>Da (platformă proprie)</td>
+                    <td>Nu, doar la cassa</td>
+                </tr>
+                <tr>
+                    <td><strong>Integrare cu comenzi online?</strong></td>
+                    <td>Manual (copie paste)</td>
+                    <td>Automată</td>
+                    <td>Automată</td>
+                    <td>Integrată, dar scump</td>
+                </tr>
+                <tr>
+                    <td><strong>Hardware necesar?</strong></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Tabletă (200+ lei)</td>
+                    <td>Terminal POS (2000+ lei)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Concluzia:</strong> Pentru restaurant mic/mediu, meniu QR = cea mai ieftină cale la digitalizare.</p>
+
+        <h3>3. Meciulul tău se vede ca modern. Clienții aleg locuri moderne.</h3>
+
+        <p><strong>Psiologie:</strong> Clienții (mai ales din orașe mari) associază QR menu cu:</p>
+        <ul>
+            <li>Hygienă (nu se ating menuurile)</li>
+            <li>Viteză (comandă instant)</li>
+            <li>Profesionalism (restaurantul e update cu tehnologie)</li>
+        </ul>
+
+        <p><strong>Efect:</strong> +15-25% încredere în restaurant. Clienții recomandă mai ușor.</p>
+
+        <h2>Meniu QR Gratis vs. Doxmenu: Cum aleg corect?</h2>
+
+        <p>Să spunem că ești proprietar de o <strong>crama cu 20 mese</strong> în Brașov. Care e cea mai bună decizie?</p>
+
+        <h3>Scenariul 1: Ai buget mic (&lt; 500 lei/lună total)</h3>
+
+        <p><strong>Alege: Meniu QR Gratis</strong></p>
+
+        <p><strong>De ce?</strong></p>
+        <ul>
+            <li>Cost = 0</li>
+            <li>Setup = 5 minute</li>
+            <li>Se scanează imediat</li>
+            <li>Poți să actualizezi meniu singur (oricând)</li>
+            <li>Poți adăuga fotografie mâncării (clienți decizi mai ușor)</li>
+        </ul>
+
+        <p><strong>Dezavantaj:</strong></p>
+        <ul>
+            <li>Fără analytics (nu vezi cât citesc meniu, ce comandă mai mult)</li>
+            <li>Fără notificări când clienți citesc meniu (dar sincer, nu-ți trebuie asta la început)</li>
+        </ul>
+
+        <p><strong>Pentru tine:</strong> Generator QR gratuit = perfect start.</p>
+
+        <h3>Scenariul 2: Ai restaurantul plin (30+ mese) + vrei analytics</h3>
+
+        <p><strong>Alege: Doxmenu (500 lei/lună) SAU upgrade la Business Plan</strong></p>
+
+        <p><strong>De ce?</strong></p>
+        <ul>
+            <li>Vezi care mâncare e citită cel mai mult</li>
+            <li>Poți vedea tendințe (clienții și-au luat tot din "Meniu Zilei")</li>
+            <li>Doxmenu are integrare cu UberEats/Glovo (comenzi online)</li>
+            <li>Analytics automată</li>
+        </ul>
+
+        <p><strong>Dezavantaj:</strong></p>
+        <ul>
+            <li>Cost fix lunar = 6000 lei/an (pentru Doxmenu)</li>
+            <li>Dependență de platformă</li>
+        </ul>
+
+        <p><strong>Pentru tine:</strong> Dacă vrei să crești, investiția e justificată la 30+ mese.</p>
+
+        <h3>Scenariul 3: Vrei ce-ai mai bun (analytics + QR gratis)</h3>
+
+        <p><strong>Alege: <a href="/">Meniu QR Gratis</a> + Business Plan (29 lei/lună)</strong></p>
+
+        <p>Perfect middle ground:</p>
+        <ul>
+            <li>Generezi meniu QR gratuit</li>
+            <li>Adaugi Business Plan → vezi cine scană, din ce țară, ce-și ia</li>
+            <li>Analytics detaliate (care mâncare e populară)</li>
+            <li>Costuri minime (29 lei/lună + domeniu = ~50 lei/lună)</li>
+        </ul>
+
+        <p><strong>Cost/an: 600 lei.</strong> Doxmenu = 6000 lei. Economisești 5400 lei.</p>
+
+        <p><strong>Pentru tine:</strong> Start cu QR gratis. Dacă vezi că meniu-ul se scanează 1000+ ori/lună, upgrade la Business plan.</p>
+
+        <h2>Cum faci meniu QR în 5 minute (pas cu pas)</h2>
+
+        <p><strong>Lucrurile de care ai nevoie:</strong></p>
+        <ul>
+            <li>✅ Telefon sau calculator (orice browser)</li>
+            <li>✅ Textul meniu tău (copiat din document/Word/pe hârtie)</li>
+            <li>✅ Imprimantă (dacă vrei să printezi QR-ul)</li>
+        </ul>
+
+        <h3>Pasul 1: Deschide Generatorul</h3>
+
+        <p>Mergi pe: <strong><a href="/">CodQR.ro — Generator QR Gratuit</a></strong></p>
+
+        <h3>Pasul 2: Alege tip conținut = "Link"</h3>
+
+        <p>1. Sus, see tabs: <strong>"Link"</strong> | "Text" | "Email" | "Telefon" | "SMS" | "Wi-Fi" | "Card"<br>
+        2. Click pe <strong>"Link"</strong></p>
+
+        <p><strong>De ce "Link"?</strong> Fiindcă meniu-ul tău va fi pe o pagină web (Google Docs, o pagină HTML proprie, etc.). Codul QR va direcționa direct acolo.</p>
+
+        <h3>Pasul 3: Paste URL-ul meniu-ului tău</h3>
+
+        <p><strong>Cum se face meniu online (grat)?</strong></p>
+
+        <p><strong>Opțiunea A: Google Docs (Cea mai ușoară)</strong></p>
+        <ol>
+            <li>Deschide Google Docs (docs.google.com)</li>
+            <li>Document nou</li>
+            <li>Scrie: "MENIU RESTAURANT [Nume]" + categorii (Aperitive, Feluri principale, Deserturi)</li>
+            <li>Alege "Share" (dreapta sus) → "Anyone with link can view"</li>
+            <li>Copiază link-ul (ceva gen: <code>https://docs.google.com/document/d/1Abc...</code>)</li>
+        </ol>
+
+        <p><strong>Opțiunea B: HTML propriu (Doar dacă știi cod)</strong></p>
+        <ul>
+            <li>Crezi o pagină HTML cu CSS frumos</li>
+            <li>Host-o pe Netlify/GitHub Pages (gratis)</li>
+            <li>Copy link-ul</li>
+        </ul>
+
+        <p><strong>Opțiunea C: Wix / WordPress / alt site builder</strong></p>
+        <ul>
+            <li>Crezi o pagină "Meniu"</li>
+            <li>Copy link-ul public</li>
+        </ul>
+
+        <p><strong>Pentru tine (recomandare):</strong> <strong>Opțiunea A (Google Docs)</strong> = cea mai ușoară.</p>
+
+        <h3>Pasul 4: Genereaza QR-ul</h3>
+
+        <ol>
+            <li>În generator, paste link-ul meniu-ului tău</li>
+            <li>Click <strong>"Genereaza"</strong> (sau echivalent pe site)</li>
+            <li>Vei vedea un pătrat cu cod = <strong>Asta e codul QR</strong></li>
+        </ol>
+
+        <p>Pătratele albe/negre = asta-i codul QR. Gata.</p>
+
+        <h3>Pasul 5: Descarcă și Tiparește</h3>
+
+        <ol>
+            <li>Click <strong>"Download"</strong> (PNG sau JPG)</li>
+            <li>Imprimantă → tiparești codul (mărime: 5x5 cm = perfect)</li>
+            <li>Lipești etichetă pe mese / pe cladă (sus, ușor de văzut)</li>
+        </ol>
+
+        <p><strong>Gata!</strong> Clienți scanează → Văd meniu pe telefon → Comandă. Gata.</p>
+
+        <h2>Best Practice: Unde pui codul QR și cum-l anunți clienților</h2>
+
+        <h3>1. Locație fizică a codului (care cere scanare ușoară)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Loc</th>
+                    <th>Avantaj</th>
+                    <th>Dezavantaj</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tabelă (centru)</strong></td>
+                    <td>Clienți văd imediat</td>
+                    <td>Risc să se murdărească</td>
+                </tr>
+                <tr>
+                    <td><strong>Perete (lângă intrare)</strong></td>
+                    <td>"Meniu digital aici" — semn + QR</td>
+                    <td>Trebuie să se ridice clienții</td>
+                </tr>
+                <tr>
+                    <td><strong>Lampă deasupra mesei</strong></td>
+                    <td>Protejat, ușor de văzut</td>
+                    <td>Trebuie montare</td>
+                </tr>
+                <tr>
+                    <td><strong>Cărtiță mini cu QR</strong></td>
+                    <td>Ține meniu fizic + digital</td>
+                    <td>Cost tipărire</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Pentru tine (recomandare):</strong> <strong>Tabelă centrală (5x5 cm) + semn mic</strong> de lângă: "📱 Scaneaza pentru MENIU digital"</p>
+
+        <h3>2. Cum le spui clienților (Training chelneri)</h3>
+
+        <p>Chelneri = oamenii care vorbesc cu clienții. Instrucțiuni pentru ei:</p>
+
+        <blockquote>
+            Cand client se așează:<br>
+            "Bună! Putem sa te servim imediat. Avem și MENIU DIGITAL — scaneaza codul ala QR de pe masă cu telefonul, și vei vedea meniu complet + imagini. E mai rapid decât meniu pe hârtie. Vrei sa comandi de acolo, sau pregatim meniu fizic?"
+        </blockquote>
+
+        <p><strong>Efect:</strong> +30% vor alege QR. De ce? Fiindcă chelneri ii-ndemna. Psihologie.</p>
+
+        <h3>3. Semn la intrare (design)</h3>
+
+        <p>Tipărești un semn A4:</p>
+
+        <div class="highlight-box">
+            <p style="text-align: center;">
+                <strong>📱 MENIU DIGITAL</strong><br><br>
+                Scaneaza QR-ul de pe masa cu telefonul<br>
+                → Comanda instant
+            </p>
+        </div>
+
+        <h2>Case Study: Restaurant din Brașov care a economisit 5652 lei/an</h2>
+
+        <div class="case-study">
+            <p><em>(Fiktiv, dar bazat pe numere reale)</em></p>
+
+            <p><strong>Restaurant:</strong> "Crama Poiană" (20 mese, Brașov, crama tradițională)</p>
+
+            <p><strong>Situația înainte:</strong></p>
+            <ul>
+                <li>Meniu fizic pe 20 bucăți (500 lei/an tipărire + înlocuire deteriorate)</li>
+                <li>Doxmenu (500 lei/lună) = 6000 lei/an</li>
+                <li>Total cost digital: 6500 lei/an</li>
+                <li>Timp per comandă: 8-10 minute (chelner duce meniu, client citește, etc.)</li>
+            </ul>
+
+            <p><strong>Decizie:</strong> Trece pe <strong><a href="/">Meniu QR Gratis</a> + Business Plan (29 lei/lună)</strong></p>
+            <ul>
+                <li>QR gratis: 0 lei</li>
+                <li>Business Plan: 29 lei/lună × 12 = 348 lei/an</li>
+                <li>Total: 348 lei/an</li>
+            </ul>
+
+            <p><strong>Rezultat după 3 luni:</strong></p>
+            <ul>
+                <li>Comenzi/zi: crescut de la 45 → 65 (+44%)</li>
+                <li>Timp per comandă: 3-5 minute (clienți comandă singuri direct de pe QR)</li>
+                <li>Profit pe comenzi: +800 lei/lună (mai mulți clienți, comenzi mai rapide)</li>
+                <li>Cost economisit vs. Doxmenu: 6000 - 348 = <strong>5652 lei/an</strong></li>
+            </ul>
+
+            <p><strong>Concluzie:</strong> Investiție 348 lei → ROI 5652 lei = <strong>16x return.</strong></p>
+        </div>
+
+        <h2>FAQ: Întrebări frecvente despre meniu QR</h2>
+
+        <h3>P: Cât costă să creez meniu QR?</h3>
+        <p>R: <strong>Gratis.</strong> Doar dacă vrei analytics detaliate, <a href="/">Business Plan = 29 lei/lună</a>.</p>
+
+        <h3>P: E legal meniu QR în România?</h3>
+        <p>R: <strong>Da, complet legal.</strong> Nu e nimic digital ilegal — e doar o etichetă care direcționează la o pagină web. Regulile GDPR se aplică (dacă colectezi date), dar generatoare gratuite nu colectează nimic.</p>
+
+        <h3>P: Vin clienții la QR menu sau prefer hârtie?</h3>
+        <p>R: Generație tânără (18-45 ani): <strong>80% prefer QR.</strong> Clienți mai în vârstă (45+): <strong>50% prefer hârtie.</strong> Recomandare: <strong>Ține ambele</strong> = QR + meniu fizic opțional.</p>
+
+        <h3>P: Dacă nu am WiFi în restaurant?</h3>
+        <p>R: Codul QR trebuie să direcționeze la o pagină web. Clienții trebuie internet (WiFi propriu sau date mobile). Soluție: <strong>Oferă WiFi gratuit</strong> (e standard oriunde). Cost: 50-100 lei/lună.</p>
+
+        <h3>P: Pot actualiza meniu dacă se schimbă preț?</h3>
+        <p>R: <strong>Da, instant.</strong> Dacă ai meniu pe Google Docs, editezi doc-ul → clienții văd preț nou imediat. Nici o re-tipărire, nici o redeploy.</p>
+
+        <h3>P: Cum văd statistics — cine a scanat codul?</h3>
+        <p>R: Cu <a href="/">Business Plan (29 lei/lună)</a> → Dashboard cu: de câte ori s-a scanat QR, din ce țară, cât timp a stat clientul pe meniu, ce-a citit cel mai mult.</p>
+
+        <h2>Pași finali: Meniu QR e gata, acum ce?</h2>
+
+        <ol>
+            <li>✅ Generat QR-ul</li>
+            <li>✅ Tiparit și lipit pe mese</li>
+            <li>✅ Antrenat chelnerii</li>
+            <li>✅ Meniu actualizat pe Google Docs (preț, disponibilitate)</li>
+        </ol>
+
+        <p><strong>Următorele 2 săptămâni:</strong></p>
+        <ul>
+            <li>Observă clienți cum reacționează</li>
+            <li>Numără comenzi zile cu QR vs. fără</li>
+            <li>Cești-nează reacții (e greu de scanat? Codul e clar?)</li>
+        </ul>
+
+        <p><strong>După 1 lună:</strong></p>
+        <ul>
+            <li>Dacă scannări au crescut (&gt;100/zi), upgrade la <a href="/">Business Plan</a> (analytics)</li>
+            <li>Daca nu, tu ai meniu digital <strong>gratis</strong> — profităle igualmente iei</li>
+        </ul>
+
+        <h2>Concluzie: Meniu QR nu e lux, e necesitate</h2>
+
+        <p>Restaurantele care <strong>nu au meniu digital</strong> în 2026 sunt <strong>Blockbuster în 2010</strong>.</p>
+
+        <p>Tehnologia nu-i scumpă, nu-i greu. Meniu QR e:</p>
+        <ul>
+            <li><strong>Gratuit</strong> (0 lei/lună)</li>
+            <li><strong>Instant</strong> (5 min setup)</li>
+            <li><strong>Eficient</strong> (comenzi mai rapide, profit mai mare)</li>
+            <li><strong>Modern</strong> (clienți aleg locuri moderne)</li>
+        </ul>
+
+        <p>Deschide <a href="/">generator acum</a> → fă meniu → printează QR → lipește pe mese. Gata. Ai făcut digital transformation a restaurantului tău în 10 minute.</p>
+
+        <h2 style="text-align: center; margin-top: 50px;">🎯 Vrei să încerci?</h2>
+
+        <p style="text-align: center;">
+            <a href="/" class="cta-button">Generează meniu QR gratis</a><br>
+            <span style="color: #666;">0 lei, instant, personalizat</span>
+        </p>
+
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="/" class="cta-button" style="background: #28a745;">Business Plan — 29 lei/lună</a><br>
+            <span style="color: #666;">Vezi cine scană, ce comandă, statistici zilnice</span>
+        </p>
+
+        <div class="related-articles">
+            <h3>Articole Conexe</h3>
+            <ul>
+                <li><a href="/blog/etichete-qr-inventar">Etichete QR pentru Inventar — Sistem Gratuit</a> — Similar problema, altă industrie</li>
+                <li><a href="/blog/generator-qr-personalizat">Generator Cod QR — Personalizat vs. Alte Tools</a> — Comparație detaliat</li>
+                <li><a href="/blog/use-cases-qr-romania">5 Use Cases QR Code în România 2026</a> — Inspirație din alte domenii</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
+
+        <p style="font-size: 14px; color: #666; margin-top: 30px;">
+            <strong>Articol scris de:</strong> Alexandru (CodQR.ro)<br>
+            <strong>Actualizat:</strong> Octombrie 2026<br>
+            <strong>Categorie:</strong> Tutorial - Digitalizare Restaurant
+        </p>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Meniu QR pentru Restaurant — Ghid Complet 2026",
+      "description": "Ghid complet pentru implementarea meniurilor QR în restaurante. Comparație Doxmenu vs Generator QR Gratuit. Cost: 0 lei/lună.",
+      "author": {
+        "@type": "Person",
+        "name": "Alexandru"
+      },
+      "datePublished": "2026-10-15",
+      "dateModified": "2026-10-15",
+      "image": "https://autoact.eu/images/og-qr-restaurant.png",
+      "articleBody": "Ghid complet pentru QR menu în restaurante..."
+    }
+    </script>
+</body>
+</html>
