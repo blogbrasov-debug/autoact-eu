@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+Allow: /blog/
+Disallow: /admin/
+
+Sitemap: https://autoact.eu/sitemap.xml
